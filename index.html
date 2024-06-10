@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang='en'>
+<head>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/theme/dracula.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/codemirror.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/6.65.7/mode/javascript/javascript.js"></script>
+    <script src="js.js"></script>
+    <style>
+        .CodeMirror.cm-s-dracula {
+            height: 100%;
+            width: 100%;
+            scrollbar-width: none;
+        }
+        .CodeMirror.cm-s-dracula::-webkit-scrollbar {
+            width: 0px;
+        }
+    </style>
+</head>
+<body>
+    <textarea id="c">
+        
+    </textarea>
+    <script>
+        var editor = CodeMirror.fromTextArea(document.getElementById("c"), {
+            mode: 'javascript',
+            theme: 'dracula',
+            lineNumbers: true
+        }).setValue(output);
+        Array.from(document.getElementsByTagName('textarea')).forEach((e) => {
+            e.disabled = true;
+        });
+    </script>
+</body>
+</html>
